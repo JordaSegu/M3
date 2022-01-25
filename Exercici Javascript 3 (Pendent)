@@ -1,0 +1,52 @@
+//Un triangle rectangle de "a"s (20 de base)
+var Texto="a"
+for (Texto="a"; Texto<20; Texto+"a"){
+  if(Texto<20){
+    Texto=Texto+"a"
+  }
+}
+console.log(Texto)
+
+//Dos triangles rectangles de "a"s (20 de base) com si fos la mitat d'un arbre de nadal
+
+a
+aa
+aaa
+aaaa
+aaaaa
+a
+aa
+aaa
+aaaa
+aaaaa
+
+//Hacer una piramide invertida
+var Texto="hola"
+
+Texto.slice (0, -1);
+console.log(Texto);
+Texto.slice (0, -1);
+console.log(Texto);
+Texto.slice (0, -1);
+console.log(Texto);
+Texto.slice (0, -1);
+console.log(Texto);
+
+aaaaa
+aaaa
+aaa
+aa
+a
+
+//Hacer una piramide lateral
+
+a
+aa
+aaa
+aaaa
+aaa
+aa
+a
+
+//100 -> 0
+for (var i=100; i>0; i--)
