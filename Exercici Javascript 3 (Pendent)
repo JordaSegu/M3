@@ -1,13 +1,11 @@
-//Un triangle rectangle de "a"s (20 de base)
+//Un triangle rectangle de "a"s (10 de base)
 var Texto="a"
-for (Texto="a"; Texto<20; Texto+"a"){
-  if(Texto<20){
-    Texto=Texto+"a"
-  }
+for (var i=0; i<10; i++){
+  console.log(Texto);
+  Texto=Texto+"a";
 }
-console.log(Texto)
 
-//Dos triangles rectangles de "a"s (20 de base) com si fos la mitat d'un arbre de nadal
+//Dos triangles rectangles de "a"s (X de base) com si fos la mitat d'un arbre de nadal
 
 a
 aa
