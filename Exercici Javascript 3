@@ -1,4 +1,5 @@
 //Un triangle rectangle de "a"s (10 de base)
+
 var Texto="a"
 for (var i=0; i<10; i++){
   console.log(Texto);
@@ -19,9 +20,11 @@ for (var i=0; i<10; i++){
 }
 
 //Hacer una piramide invertida
-var Texto="hola"
-for(i=text.length; i>0; i--){
-  console.log(text.slice(0,i))}
+
+var Texto="aaaaa";
+for(i=6; i>0; i--){
+  console.log(Texto);
+  Texto=Texto.slice(0,-1);}
 
 aaaaa
 aaaa
@@ -31,13 +34,24 @@ a
 
 //Hacer una piramide lateral
 
+var Texto="a";
+for(var i=0; i<11; i++){
+  if (i<5){
+      console.log(Texto);
+      Texto=Texto+"a";
+  } else {
+    console.log(Texto);
+    Texto=Texto.slice(0,-1);}
+}
+
 a
 aa
 aaa
 aaaa
+aaaaa
+aaaaaa
+aaaaa
+aaaa
 aaa
 aa
 a
-
-//100 -> 0
-for (var i=100; i>0; i--)
