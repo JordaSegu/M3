@@ -1,9 +1,0 @@
-//Escribir del 1 al 100 que numeros son pares y que numeros son impares
-
-for (var count=0; count<100; count++){
-   if (count%2 == 0){
-    console.log(count + " es par");
-  } else {
-    console.log(count + " impar");
-  }
-}

@@ -1,0 +1,23 @@
+//Escribir del 1 al 100 que numeros son pares y que numeros son impares
+
+for (var count=0; count<100; count++){
+   if (count%2 == 0){
+    console.log(count + " es par");
+  } else {
+    console.log(count + " impar");
+  }
+}
+
+//Escribir del 1 al 100 que numeros son pares y que numeros son impares (y cuantos son)
+var NumPar = 0
+var NumImpar = 0
+
+for(var i=0; i<100; i++){
+  if(i%2 == 0) {
+    NumPar=NumPar+1;
+  } else{
+    NumImpar=NumImpar+1;
+  }
+}
+  console.log(NumImpar);
+  console.log(NumPar);
