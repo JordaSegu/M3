@@ -124,3 +124,27 @@ console.log(a1);
    7, 14, 21, 28, 35,
   42, 49,  0, 63, 70
 ]
+
+//
+var num=[7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 69];
+for (var i=0; i<11; i++){
+    if (num[i]>num[i+1]){
+        console.log("No està ordenat de menor a major")
+        break;
+    }else{
+        console.log("Està ordenat de menor a major")
+    }
+}
+
+Està ordenat de menor a major
+Està ordenat de menor a major
+Està ordenat de menor a major
+Està ordenat de menor a major
+Està ordenat de menor a major
+Està ordenat de menor a major
+Està ordenat de menor a major
+Està ordenat de menor a major
+Està ordenat de menor a major
+No està ordenat de menor a major
+
+//
