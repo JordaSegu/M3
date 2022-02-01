@@ -1,0 +1,126 @@
+//
+var num=5;
+if(num>0){
+    console.log("es positivo");
+}else if (num==0){
+    console.log("es 0");
+}else{
+    console.log("es negativo");
+}
+
+es positivo
+
+//Array lleno de numeros positivos, negativos y zeros.
+
+var num=[-7, 14, -21, -28, 35, 42, -49, 56, -63, 70, 0];
+var max=num.length;
+for(var i=0; i<max; i++){
+    if(num[i]>0){
+        console.log (num[i]+" es positivo");
+    }else if (num[i]==0){
+        console.log (num[i]+" es 0");
+    }else{
+        console.log (num[i]+" es negativo");
+    }
+}
+
+-7 es negativo
+14 es positivo
+-21 es negativo
+-28 es negativo
+35 es positivo
+42 es positivo
+-49 es negativo
+56 es positivo
+-63 es negativo
+70 es positivo
+0 es 0
+
+//
+var num=[-7, 14, -21, -28, 35, 42, -49, 56, -63, 70, 0];
+var aP=[];
+var aN=[];
+var a0=[];
+var max=num.length;
+for(var i=0; i<max; i++){
+    if(num[i]>0){
+        aP.push(num[i])
+    }else if (num[i]==0){
+        a0.push(num[i])
+    }else{
+        aN.push(num[i])
+    }
+}
+console.log (aP+" es positivo");
+console.log (a0+" es 0");
+console.log (aN+" es negativo");
+
+14,35,42,56,70 es positivo
+0 es 0
+-7,-21,-28,-49,-63 es negativo
+
+//
+var array=[-7, 14, -21, -28, 35, 42, -49, 56, -63, 70, 0];
+var arrayReves=[];
+var max=array.length-1;
+for(var i=max; i>=0; i--){
+    arrayReves.push(array[i])
+}
+console.log(arrayReves);
+
+[
+   0, 70, -63,  56, -49,
+  42, 35, -28, -21,  14,
+  -7
+]
+
+//
+var a1=[7, 14, 21, 28, 35, 42, 49, 56, 63, 70];
+var a2=[3, 6, 9, 12, 15, 18, 21, 24, 27, 30];
+var a3=[0];
+var i=0;
+var max=a1.length;
+while(i<max){
+    a3.push(a1[i]+a2[i]);
+    i++;
+    }
+console.log(a3);
+
+[
+    0, 10, 20, 30, 40,
+   50, 60, 70, 80, 90,
+  100
+]
+
+//
+var a1=[7, 14, 21, 28, 35, 42, 49, 56, 63, 70];
+var a2=[3, 6, 9, 12, 15, 18, 21, 24, 27, 30];
+var a3=[];
+var i=0;
+var j=a1.length-1
+while(i<10){
+    a3.push(a1[i]+a2[j]);
+    i++;
+    j--;
+}
+console.log(a3)
+
+[
+  37, 41, 45, 49, 53,
+  57, 61, 65, 69, 73
+]
+
+//
+var a1=[7, 14, 21, 28, 35, 42, 49, 56, 63, 70];
+var n=56;
+for(var i=0; i<a1.length;i++){
+    if(a1[i]==n){
+        a1[i]=0;
+    }
+}
+console.log(a1);
+
+[
+   7, 14, 21, 28, 35,
+  42, 49,  0, 63, 70
+]
