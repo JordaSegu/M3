@@ -147,4 +147,9 @@ Està ordenat de menor a major
 Està ordenat de menor a major
 No està ordenat de menor a major
 
-//
+// Successió de Fibonacci
+let num=[0,1];
+for (var i=2;i<11;i++){
+    num.push(num[i-1]+num[i-2]);
+}
+console.log(num)
