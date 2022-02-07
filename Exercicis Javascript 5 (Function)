@@ -1,1 +1,164 @@
+//
+function doblar (num1){
+    var total = num1*2;
+    return total;
+}
 
+var resultat=doblar(5);
+console.log(resultat);
+
+10
+
+//
+function cuadrado(num1){
+    var total=num1**2;
+    return total;
+}
+var nums=[1,2,3,4,5,6,7,8,9,10]
+for (var i=0; i<nums.length; i++){
+    var resultat=cuadrado (nums[i]);
+    console.log(resultat);
+}
+
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+//
+function DibujarLetra(letra){
+    console.log(letra);
+    console.log(letra);
+    console.log(letra);
+}
+DibujarLetra("b");
+
+b
+b
+b
+
+//
+
+function DibujarLetra(letra,num){
+for(var i=0;i<num;i++){
+    console.log(letra);
+    }
+}
+DibujarLetra("b",3);
+DibujarLetra("y",6);
+DibujarLetra("p",5);
+
+b
+b
+b
+y
+y
+y
+y
+y
+y
+p
+p
+p
+p
+p
+
+//
+function DibujarLetra(letra,num){
+for (var i=0; i<num; i++){
+  console.log(letra);
+  letra=letra+letra;
+    }
+}
+DibujarLetra("a",3);
+DibujarLetra("a",2);
+DibujarLetra("a",1);
+
+a
+aa
+aaaa
+a
+aa
+a
+
+//
+function DibujarLetra(letra,num){
+    var frase="";
+    for(var i=num;i>0;i--){
+        frase=frase+letra;
+    }
+    console.log(frase);
+}
+function DibujarPiramide(letra,veces){
+    for(var j=veces;j>0;j--){
+        DibujarLetra(letra, j);
+    }
+}
+
+DibujarPiramide("b",5);
+
+bbbbb
+bbbb
+bbb
+bb
+b
+
+//
+function DibujarLetra(letra,num){
+    var frase="";
+    for(var i=num;i>0;i--){
+        frase=frase+letra;
+    }
+    console.log(frase);
+}
+function DibujarPiramide(letra,veces){
+    for(var i=1;i<veces;i++){
+        DibujarLetra(letra, i);
+    }
+    for(var i=veces;i>0;i--){
+        DibujarLetra(letra, i);
+    }
+}
+DibujarPiramide("b",5);
+
+b
+bb
+bbb
+bbbb
+bbbbb
+bbbb
+bbb
+bb
+b
+
+//
+function mayorEdad(edad){
+    if (edad>=18){
+        return true;
+    } else {
+        return false;
+    }
+}
+var edades=[29,17,62,28,70];
+var mayoresArr=[];
+var menoresArr=[];
+for (var i=0;i<edades.length;i++){
+    if(mayorEdad(edades[i])==true){
+        mayoresArr.push(edades[i]);
+    }else{
+        menoresArr.push(edades[i]);
+    }
+}
+console.log(mayoresArr);
+console.log(menoresArr);
+
+[ 29, 62, 28, 70 ]
+[ 17 ]
+
+//
