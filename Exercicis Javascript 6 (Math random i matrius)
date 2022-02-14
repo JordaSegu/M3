@@ -1,0 +1,75 @@
+//
+var num= Math.random();
+var num10= num*10;
+console.log(num10);
+var numeroRedondo=Math.floor(num10);
+console.log(numeroRedondo);
+
+7.288991964143509
+7
+
+//
+Math.floor(Math.random(); //Número del 0 al 0.9^
+Math.floor(Math.random()*10)+1; //Número aleatori del 1 al 10
+Math.floor(Math.random()*100); //Número aleatori del 0 al 99
+
+//
+function genNumRandom(){
+    var num= Math.random();
+    var num10= num*10;
+    var numeroRedondo=Math.floor(num10);
+    return numeroRedondo;
+}
+console.log(genNumRandom());
+
+4
+
+//
+function genNumRandom(){
+    var num= Math.random();
+    var num10= num*10;
+    var numeroRedondo=Math.floor(num10);
+    return numeroRedondo;
+}
+var arr1=[];
+for (var i=0; i<5; i++){
+    arr1.push(genNumRandom());
+}
+console.log(arr1);
+
+[ 2, 6, 0, 3, 1 ]
+
+//
+function getRndInteger(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
+console.log(getRndInteger(7,21));
+
+//
+var m=[[1,2,3],[4,5,6],[7,8,9]];
+console.table(m);
+
+for(var i=0;i<3;i++){
+    for(var j=0;j<3;j++){
+        console.log(m[i][j]);
+    }
+}
+
+┌─────────┬───┬───┬───┐
+│ (index) │ 0 │ 1 │ 2 │
+├─────────┼───┼───┼───┤
+│    0    │ 1 │ 2 │ 3 │
+│    1    │ 4 │ 5 │ 6 │
+│    2    │ 7 │ 8 │ 9 │
+└─────────┴───┴───┴───┘
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+//
