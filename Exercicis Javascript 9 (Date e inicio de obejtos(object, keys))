@@ -1,0 +1,13 @@
+//
+var hoy=new Date();
+console.log(hoy);
+console.log(hoy.getDate());
+console.log(hoy.getMonth()); //0-11, siendo0 el mes de enero y 11 el mes de diciembre
+console.log(hoy.getFullYear());
+
+2022-02-21T15:43:18.284Z
+21
+1
+2022
+
+//
