@@ -1,0 +1,52 @@
+//
+var texto="En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor";
+var espacios=0;
+for(var i=0; i<texto.length; i++){
+    if(texto.charAt(i)==" "){
+    espacios=espacios+1;
+    }
+}
+console.log("Hay "+espacios+" espacios.");
+
+Hay 32 espacios.
+
+//
+var texto="     En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.";
+console.log(texto);
+var textoFinal="";
+for(var i=0; i<texto.length; i++){
+    if(texto.charAt(i) !==" "){
+        textoFinal=texto.substring(i, texto.length);
+        break;
+    }
+}
+console.log(textoFinal);
+
+     En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.
+En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.
+
+//
+var texto="En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.";
+var arr1=texto.split(", ");
+console.log(arr1);
+
+[
+  'En un lugar de la Mancha',
+  'de cuyo nombre no quiero acordarme',
+  'no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero',
+  'adarga antigua',
+  'rocín flaco y galgo corredor.'
+]
+
+//
+var numero=5;
+console.log(numero.toString()); //"toString" convierte el texto en numero
+var numero2="5";
+console.log(numero2+2);
+console.log(parseInt(numero2)+2); //"parseInt" convierte el numero en texto
+
+5
+52
+7
+
+//
