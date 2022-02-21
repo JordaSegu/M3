@@ -11,3 +11,50 @@ console.log(hoy.getFullYear());
 2022
 
 //
+var persona={
+    nombre:"",
+    apellido:"",
+    get nombreCompleto(){
+        return this.nombre+" "+this.apellido;
+    },
+    set nombreCompleto(texto){
+        var palabras=texto.split(" ");
+        this.nombre=palabras[0]||"";
+        this.apellido=palabras[1]||"";
+    }
+}
+persona.nombreCompleto="Jordà Segú";
+console.log(persona.nombreCompleto);
+
+Jordà Segú
+
+//
+var miEdad=10;
+var mayorEdad=miEdad>=18?"Si.":"No.";
+console.log(mayorEdad);
+
+No.
+
+// (Pendent de corretgir)
+var producto={
+    precio:
+    set (){
+        
+    }
+    precioIVA:
+    get (){
+        
+    }
+    precioDescuento:
+    get (){
+        
+    }
+    precioDescuentoIVA:
+    get (){
+        
+    }
+}
+console.log("Precio: "+precio);
+console.log("Precio + IVA: "+precioIVA);
+console.log("Precio con descuento: "+precioDescuento);
+console.log("Precio con descuento + IVA: "+precioDescuentoIVA);
