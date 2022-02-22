@@ -37,24 +37,99 @@ No.
 
 // (Pendent de corretgir)
 var producto={
-    precio:
-    set (){
-        
-    }
-    precioIVA:
-    get (){
-        
-    }
-    precioDescuento:
-    get (){
-        
-    }
-    precioDescuentoIVA:
-    get (){
-        
+    precio:0,
+    precioIVA:0,
+    precioDescuento:0,
+    precioDescuentoIVA:0,
+    get preu(){
+        return this.precio;
+    },
+    get precioConIVA(){
+        return this.precioIVA;
+    },
+    get precioConDescuento(){
+        return this.precioDescuento;
+    },
+    get precioConDescuentoIVA(){
+        return this.precioDescuentoIVA;
+    },
+    set preu(precio){
+        this.precio=precio;
+        this.precioIVA=precio*1.21;
+        this.precioDescuento=this.precio-(this.precio*0.10);
+        this.precioDescuentoIVA=this.precioConDescuento*1.21;
+    },
+}
+producto.precio=3.14;
+console.log("Precio: " + producto.preu);
+console.log("Precio + IVA: " + producto.precioConIVA);
+console.log("Precio con descuento: " + producto.precioConDescuento);
+console.log("Precio con descuento + IVA: " + producto.precioConDescuentoIVA);
+
+//
+class coche{
+    constructor(Marca, Modelo, Año, Caballos, Kilometraje, Preu){
+        this.Marca=Marca;
+        this.Modelo=Modelo;
+        this.Año=Año;
+        this.Caballos=Caballos;
+        this.Kilometraje=Kilometraje;
+        this.Preu=Preu
     }
 }
-console.log("Precio: "+precio);
-console.log("Precio + IVA: "+precioIVA);
-console.log("Precio con descuento: "+precioDescuento);
-console.log("Precio con descuento + IVA: "+precioDescuentoIVA);
+var c1=new coche ("Peugeot", "Partner","1997", "75 CV", 295000, 50);
+var c2=new coche ("Peugeot", "406", "2000", "110 CV", 240000, 1000);
+var c3=new coche ("Ford", "Fiesta", "2005", "90 CV", 150000, 500);
+var c4=new coche ("Peugeot", "Partner Tepee", "2016", "120 CV", 50000, 17500);
+var c5=new coche ("Peugeot", "3008", "2016", "130 CV", 20000, 27500);
+var coches = [];
+coches.push(c1,c2,c3,c4,c5); 
+var kilometrajeTotal=0;
+var precioTotal=0;
+for(i=0;i<coches.length;i++){
+    kilometrajeTotal+=coches[i].Kilometraje; //= kilometrajeTotal + coches[i].Kilometraje;
+    precioTotal+=coches[i].Preu; //=precioTotal+coches[i].Preu;
+}
+console.log(kilometrajeTotal);
+console.log(precioTotal);
+
+755000
+46550
+
+// (Pendent)
+class parking{
+    constructor(){
+        this.coche=[];
+    }
+    agregarCoche(coche){
+        this.coches.push(coche);
+    }
+    obtenerKmTotal(){
+    }
+}
+class coche{
+    constructor(Marca, Modelo, Año, Caballos, Kilometraje, Preu){
+        this.Marca=Marca;
+        this.Modelo=Modelo;
+        this.Año=Año;
+        this.Caballos=Caballos;
+        this.Kilometraje=Kilometraje;
+        this.Preu=Preu;
+    }
+}
+var p1=new parking();
+var c1=new coche ("Peugeot", "Partner","1997", "75 CV", 295000, 50);
+var c2=new coche ("Peugeot", "406", "2000", "110 CV", 240000, 1000);
+var c3=new coche ("Ford", "Fiesta", "2005", "90 CV", 150000, 500);
+var c4=new coche ("Peugeot", "Partner Tepee", "2016", "120 CV", 50000, 17500);
+var c5=new coche ("Peugeot", "3008", "2016", "130 CV", 20000, 27500);
+var coches = [];
+coches.push(c1,c2,c3,c4,c5); 
+var kilometrajeTotal=0;
+var precioTotal=0;
+for(i=0;i<coches.length;i++){
+    kilometrajeTotal+=coches[i].Kilometraje; //= kilometrajeTotal + coches[i].Kilometraje;
+    precioTotal+=coches[i].Preu; //=precioTotal+coches[i].Preu;
+}
+var kilometrajeTotal=0;
+var precioTotal=0;
