@@ -96,40 +96,80 @@ console.log(precioTotal);
 755000
 46550
 
-// (Pendent)
-class parking{
+// 
+class compra{
     constructor(){
-        this.coche=[];
+        this.productos=[];
+        this.sumaTotal = 0;
+        this.sumaTotalIva = 0;
     }
-    agregarCoche(coche){
-        this.coches.push(coche);
+    agregarProductos(producto){
+        this.productos.push(producto);
+        this.sumaTotal +=  producto.precio;
+        this.sumaTotalIva += producto.precioIva;
     }
-    obtenerKmTotal(){
+    obtenerTodosProductos(){
+        return this.productos;
+    }
+    obtenerPrecioTotalIva() {
+        return this.sumaTotalIva;
+    }
+    obtenerPrecioTotal() {
+        return this.sumaTotal;
+    }
+    eliminarProductosTipo(tipo){
+        for(var i=0; i<this.productos.length;i++){
+            if (this.productos[i].tipo === tipo) {
+                this.sumaTotal = this.sumaTotal - this.productos[i].precio;
+                this.sumaTotalIva = this.sumaTotalIva - this.productos[i].precioIva;
+                this.productos.splice(i, 1);
+                i--;
+            }
+        }
+    }
+    eliminarProductoPorId(id){
+        for(var i=0; i<this.productos.length;i++){
+            if (this.productos[i].id === id) {
+                this.sumaTotal = this.sumaTotal - this.productos[i].precio;
+                this.sumaTotalIva = this.sumaTotalIva - this.productos[i].precioIva;
+                this.productos.splice(i, 1);
+                break;
+            }
+        }
     }
 }
-class coche{
-    constructor(Marca, Modelo, Año, Caballos, Kilometraje, Preu){
-        this.Marca=Marca;
-        this.Modelo=Modelo;
-        this.Año=Año;
-        this.Caballos=Caballos;
-        this.Kilometraje=Kilometraje;
-        this.Preu=Preu;
+
+class producto{
+    constructor(id,nombre,precio,tipo) {
+        this.id= id;
+        this.nombre=nombre;
+        this.precio=precio;
+        this.tipo=tipo;
+        this.precioIva = precio*1.21;
+        
+    }
+    obtenerPrecioIva(){
+        return this.precioIva;
     }
 }
-var p1=new parking();
-var c1=new coche ("Peugeot", "Partner","1997", "75 CV", 295000, 50);
-var c2=new coche ("Peugeot", "406", "2000", "110 CV", 240000, 1000);
-var c3=new coche ("Ford", "Fiesta", "2005", "90 CV", 150000, 500);
-var c4=new coche ("Peugeot", "Partner Tepee", "2016", "120 CV", 50000, 17500);
-var c5=new coche ("Peugeot", "3008", "2016", "130 CV", 20000, 27500);
-var coches = [];
-coches.push(c1,c2,c3,c4,c5); 
-var kilometrajeTotal=0;
-var precioTotal=0;
-for(i=0;i<coches.length;i++){
-    kilometrajeTotal+=coches[i].Kilometraje; //= kilometrajeTotal + coches[i].Kilometraje;
-    precioTotal+=coches[i].Preu; //=precioTotal+coches[i].Preu;
-}
-var kilometrajeTotal=0;
-var precioTotal=0;
+
+var c1= new producto(123, "Harina 5kg", 10,"harina");
+var c2= new producto(234, "Arroz 1kg", 8,"arroz");
+var c3= new producto(235, "Arroz 1kg", 8,"arroz");
+var c4= new producto(236, "Arroz 1kg", 8,"arroz");
+var c5= new producto(345, "Carne 2kg", 12,"carne");
+
+var carro1= new compra();
+carro1.agregarProductos(c1);
+carro1.agregarProductos(c2);
+carro1.agregarProductos(c3);
+carro1.agregarProductos(c4);
+carro1.agregarProductos(c5);
+
+console.table(carro1.obtenerTodosProductos());
+carro1.eliminarProductosTipo("arroz");
+console.table(carro1.obtenerTodosProductos());
+carro1.eliminarProductoPorId(123);
+console.table(carro1.obtenerTodosProductos());
+
+// (Exercici nota mitjana de cada classe/alumne).
