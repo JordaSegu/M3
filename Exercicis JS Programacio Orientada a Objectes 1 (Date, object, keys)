@@ -172,4 +172,116 @@ console.table(carro1.obtenerTodosProductos());
 carro1.eliminarProductoPorId(123);
 console.table(carro1.obtenerTodosProductos());
 
-// (Exercici nota mitjana de cada classe/alumne).
+//
+class alumne{
+    constructor(nombre,dni,nota) {
+        this.nombre=nombre;
+        this.dni=dni;
+        this.nota=nota;
+    }
+}
+class aula{
+    constructor(){
+        this.alumnes=[];
+        this.notesAula=[];
+        this.notaMaxAula=0;
+        this.notaMinAula=0;
+        this.notaMitjanaAula=0;  
+    }
+    setAlumne(alumne){
+        this.alumnes.push(alumne);
+        this.notesAula.push(alumne.nota);
+        this.notaMaxAula=Math.max(...this.notesAula);
+        this.notaMinAula=Math.min(...this.notesAula);
+        this.notaMitjanaAula=this.getNotaAvg();
+    }
+    getNotaAvg(){
+        let suma=0;
+        for(let i=0;i<this.notesAula.length;i++){
+            suma+=this.notesAula[i];
+        }
+        suma=suma/this.notesAula.length;
+        return suma;
+    }  
+    delAlumne(dni){
+        for(let i=0;i<this.alumnes.length;i++){
+            if(this.alumnes[i].id === id){
+                this.alumnes.splice(i,1);
+                this.notesMaxAula.splice(i,1);
+                this.notesMinAula.splice(i,1);
+                this.notesMitjanaAula.splice(i,1);
+                i--;
+                break;
+            }
+        }
+        this.notaMaxAula=Math.max(...this.notesMaxAula);
+        this.notaMinAula=Math.min(...this.notesMinAula);
+        this.notaMitjanaAula=this.getNotaAvg();
+        
+    } 
+}
+class institut{
+    constructor(){
+        this.aules=[];
+        this.notesMaxInstitut=[];
+        this.notesMinInstitut=[];
+        this.notesMitjanaInstitut=[];
+        this.notaMaxInstitut=0;
+        this.notaMinInstitut=0;
+        this.notaMitjanaInstitut=0;
+    }
+    setAula(aula){
+        this.aules.push(aula);
+        this.notesMaxInstitut.push(aula.notaMaxAula);
+        this.notesMinInstitut.push(aula.notaMinAula);
+        this.notesMitjanaInstitut.push(aula.notaMitjanaAula);
+        this.notaMaxInstitut=Math.max(...this.notesMaxInstitut);
+        this.notaMinInstitut=Math.min(...this.notesMinInstitut);
+        this.notaMitjanaInstitut=this.getNotaAvgInstitut();
+    }
+    getNotaAvgInstitut(){
+        let suma=0;
+        for(let i=0;i<this.notesMitjanaInstitut.length;i++){
+            suma+=this.notesMitjanaInstitut[i];
+        }
+        suma=suma/this.notesMitjanaInstitut.length;
+        return suma;
+    }
+}
+var a1= new alumne("Ramón","167835847",9);
+var a2= new alumne("Rosa","167628456",7);
+var a3= new alumne("Àngela","197853478",5);
+var a4= new alumne("Josep","197489623",8);
+var a5= new alumne("Joan","236987115",5);
+var a6= new alumne("Bibiana","236487168",8);
+var a7= new alumne("Jordi","369498557",7);
+var a8= new alumne("Jordà","369511221",10);
+var a9= new alumne("Jana","369101010",9);
+var a10= new alumne("Rufus","456987123",6);
+var a11= new alumne("Truman","456321987",10);
+var a12= new alumne("Mowgli","456731982",9);
+var aula1= new aula();
+aula1.setAlumne(a1);
+aula1.setAlumne(a2);
+aula1.setAlumne(a3);
+aula1.setAlumne(a4);
+var aula2= new aula();
+aula2.setAlumne(a5);
+aula2.setAlumne(a6);
+aula2.setAlumne(a7);
+aula2.setAlumne(a8);
+aula2.setAlumne(a9);
+var aula3= new aula();
+aula3.setAlumne(a10);
+aula3.setAlumne(a11);
+aula3.setAlumne(a12);
+var ins1=new institut();
+ins1.setAula(aula1,aula2,aula3);
+console.table(ins1);
+console.log(ins1);
+console.table(aula1.alumnes);
+console.log(aula1.notaMitjanaAula);
+console.table(aula2.alumnes);
+console.log(aula2.notaMitjanaAula);
+console.table(aula3.alumnes);
+console.log(aula3.notaMitjanaAula);
