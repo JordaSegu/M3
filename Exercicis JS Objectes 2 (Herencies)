@@ -89,3 +89,43 @@ constructor de repetidor
 Sr/sra: a
 
 //
+class animal{
+    constructor(nom,especie,potes,cua){
+        this.nom=nom;
+        this.especie=especie;
+        this.potes=potes;
+        this.cua=cua;
+    }
+}
+class vaca extends animal{
+    constructor(nom,especie,potes,cua,llet){
+        super(nom,especie,potes,cua);
+        this.nom="Vaca";
+        this.especie="bovino";
+        this.potes="4";
+        this.cua=true;
+        this.llet=munyir()+" litres";
+    }
+    munyir(){
+        var munyir=0;
+    }
+}
+class tigre extends animal{
+    constructor(nom,especie,potes,cua,victimes){
+        super(nom,especie,potes,cua);
+        this.nom="Tigre";
+        this.especie="felino";
+        this.potes="4";
+        this.cua=true;
+        this.victimes=victimes()+" victimes";
+    }
+    victimes(){
+        var victimes=0;
+    }
+}
+var v1=new vaca;
+v1.munyir(21);
+var t1=new tigre;
+t1.victimes(10);
+console.log(v1);
+console.log(t1);
