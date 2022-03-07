@@ -1,0 +1,91 @@
+//
+class Persona{
+    constructor(){
+        console.log("constructor de persona");
+    }
+    saludar(){
+        console.log("Hola!");
+    }
+}
+class Alumne extends Persona{
+    constructor(){
+        super();
+        console.log("constructor de alumne");
+    }
+}
+class Repetidor extends Alumne{
+    constructor(){
+        super();
+        console.log("constructor de repetidor");
+    }
+}
+var a1=new Alumne();
+a1.saludar();
+console.log("-");
+var r1=new Repetidor();
+r1.saludar();
+
+constructor de persona
+constructor de alumne
+Hola!
+-
+constructor de persona
+constructor de alumne
+constructor de repetidor
+Hola!
+
+//
+class Persona {
+    constructor(nom, cognom) {
+        console.log("constructor de persona");
+        this.nom = nom;
+        this.cognom = cognom;
+    }
+    saludar() {
+        console.log("Persona:" + this.nom);
+        return(this.nom +" " + this.cognom);
+    }
+}
+
+class Alumno extends Persona{
+    constructor(nom, cognom, curso){
+        super(nom, cognom);
+        this.curso = curso;
+        console.log("constructor de alumno");
+    }
+    saludar() {
+        var n = "a";// super.saludar(nom, cognom);
+        console.log("Sr/sra: " + n);
+    }
+    miSaludo() {
+        var n = super.saludar();
+        console.log("Sr/sra: " + n);
+    }
+}
+class Repetidor extends Alumno{
+    constructor(){
+        super();
+        console.log("constructor de repetidor");
+    }
+}
+
+
+var a1 = new Alumno("Bruce","Wayne", 2);
+a1.saludar();
+a1.miSaludo();
+console.log("----------------------");
+var r1 = new Repetidor();
+r1.saludar();
+
+constructor de persona
+constructor de alumno
+Sr/sra: a
+Persona:Bruce
+Sr/sra: Bruce Wayne
+----------------------
+constructor de persona
+constructor de alumno
+constructor de repetidor
+Sr/sra: a
+
+//
