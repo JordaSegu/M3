@@ -196,5 +196,51 @@ Tigre {
   cola: false,
   victimas: 33
 }
-//
+// Pt3 UML
 
+class Empleado {
+    constructor(nombre) {
+      this.nombre = nombre;
+    }
+    setNombre() {
+      
+    }  
+    getNombre() {
+      
+    }  
+    getInfo() {
+      
+    }
+  }
+class Operario extends Empleado {
+    constructor() {
+      
+    }
+    getInfo() {
+      
+    }
+}
+class Directivo extends Empleado {
+    constructor() {
+      
+    }
+    getInfo() {
+      
+    }
+}
+class Oficial extends Operario {
+    constructor() {
+      
+    }
+    getInfo() {
+      
+    }
+}
+class Tecnico extends Operario {
+    constructor() {
+      
+    }
+    getInfo() {
+      
+    }
+}
