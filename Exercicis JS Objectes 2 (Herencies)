@@ -89,43 +89,112 @@ constructor de repetidor
 Sr/sra: a
 
 //
-class animal{
-    constructor(nom,especie,potes,cua){
-        this.nom=nom;
-        this.especie=especie;
-        this.potes=potes;
-        this.cua=cua;
+class Animal {
+    constructor(nombre, especie, numPatas, cola) {
+      this.nombre = nombre;
+      this.especie = especie;
+      this.numPatas = numPatas;
+      this.cola = cola;
     }
+    getNombre() {
+      return this.nombre;
+    }  
+    getEspecie() {
+      return this.especie;
+    }  
+    getPatas() {
+      return this.numPatas;
+    }  
+    getCola() {
+      return this.cola; 
+    }    
+    setNombre(nombre) {
+      this.nombre = nombre;
+    }
+    setEspecie(especie) {
+      this.especie = especie;
+    }  
+    setPatas(patas) {
+      this.numPatas = patas;
+    }  
+    setCola(cola) {
+      this.cola = cola;
+    }  
+  }
+class Vaca extends Animal {
+    constructor(nombre, especie, numPatas, cola, litros) {
+      super(nombre, especie, numPatas, cola);
+      this.leche = litros;
+    }
+    getNumLitros() {
+        return this.leche;
+    } 
+    
+    setLeche(litros=1) {
+      this.leche = litros;
+    }  
+  
+    ordenyar(litros=1) {
+
+      // comprobación de errores
+      if(isNaN(litros)) { return -2351; }
+      if(litros < 1) { return -2352; }     
+      if(litros >= this.leche) {litros = this.leche;}
+
+      //flujo del programa
+      this.leche = this.leche - litros;
+      return this.leche;
+    }
+  }
+class Tigre extends Animal {
+    constructor(nombre, especie, numPatas, cola, victimas) {
+      super(nombre, especie, numPatas, cola);
+      this.victimas = victimas;
+    }  
+    comerPersonas(victimas=1) {
+        this.victimas += victimas;
+        return this.victimas;
+    }
+  }
+/*VACA*/
+var objVaca = new Vaca('Vaca0', 'Mamífero', 4, true, 10);
+console.log(objVaca);
+console.log("Litros ordeñados: " + objVaca.ordenyar(1));
+console.log("Litros ordeñados: " + objVaca.ordenyar(10));
+objVaca.setNombre('Vaca1');
+console.log('Nombre: ' + objVaca.getNombre());
+/*TIGRE*/
+var objTigre = new Tigre('TigerHunter', 'Mamifero', 4, true, 30, 8);
+console.log(objTigre);  
+objTigre.comerPersonas(3);
+objTigre.setNombre('Tigre Viejo');
+objTigre.setPatas(-1);
+objTigre.setCola(false);  
+console.log(objTigre);
+
+Vaca {
+  nombre: 'Vaca0',
+  especie: 'Mamífero',
+  numPatas: 4,
+  cola: true,
+  leche: 10
 }
-class vaca extends animal{
-    constructor(nom,especie,potes,cua,llet){
-        super(nom,especie,potes,cua);
-        this.nom="Vaca";
-        this.especie="bovino";
-        this.potes="4";
-        this.cua=true;
-        this.llet=munyir()+" litres";
-    }
-    munyir(){
-        var munyir=0;
-    }
+Litros ordeñados: 9
+Litros ordeñados: 0
+Nombre: Vaca1
+Tigre {
+  nombre: 'TigerHunter',
+  especie: 'Mamifero',
+  numPatas: 4,
+  cola: true,
+  victimas: 30
 }
-class tigre extends animal{
-    constructor(nom,especie,potes,cua,victimes){
-        super(nom,especie,potes,cua);
-        this.nom="Tigre";
-        this.especie="felino";
-        this.potes="4";
-        this.cua=true;
-        this.victimes=victimes()+" victimes";
-    }
-    victimes(){
-        var victimes=0;
-    }
+Tigre {
+  nombre: 'Tigre Viejo',
+  especie: 'Mamifero',
+  numPatas: -1,
+  cola: false,
+  victimas: 33
 }
-var v1=new vaca;
-v1.munyir(21);
-var t1=new tigre;
-t1.victimes(10);
-console.log(v1);
-console.log(t1);
+//
+
