@@ -199,48 +199,73 @@ Tigre {
 // Pt3 UML
 
 class Empleado {
-    constructor(nombre) {
-      this.nombre = nombre;
+    constructor(nom) {
+        this.nom = nom;
     }
-    setNombre() {
-      
-    }  
-    getNombre() {
-      
-    }  
-    getInfo() {
-      
+    setNombre(nom) {
+        this.nom = nom;
     }
-  }
-class Operario extends Empleado {
-    constructor() {
-      
+    getNombre(){
+        return this.nom;
     }
-    getInfo() {
-      
+    getInfo(){
+        return "Empleado " + this.nom;
     }
 }
-class Directivo extends Empleado {
-    constructor() {
-      
+
+class Operario extends Empleado{
+    constructor(nom){
+        super(nom);
     }
-    getInfo() {
-      
-    }
-}
-class Oficial extends Operario {
-    constructor() {
-      
-    }
-    getInfo() {
-      
+    getInfo(){
+        return super.getInfo() + " -> Operario";
     }
 }
-class Tecnico extends Operario {
-    constructor() {
-      
+
+class Directivo extends Empleado{
+    constructor(nom){
+        super(nom);
     }
-    getInfo() {
-      
+    getInfo(){
+        return super.getInfo() + " -> Directivo";
     }
 }
+
+class Oficial extends Operario{
+    constructor(nom){
+        super(nom);
+    }
+    getInfo(){
+        return super.getInfo() + " -> Oficial";
+    }
+}
+
+class Tecnico extends Operario{
+    constructor(nom){
+        super(nom);
+    }
+    getInfo(){
+        return super.getInfo() + " -> Tecnico";
+    }
+}
+
+var rafa = new Empleado("Rafa");
+console.log(rafa.getInfo());
+
+var mario = new Directivo("Mario");
+console.log(mario.getInfo());
+
+var alfonso = new Operario("Alfonso");
+console.log(alfonso.getInfo());
+
+var luis = new Oficial("Luis");
+console.log(luis.getInfo());
+
+var pablo = new Tecnico("Pablo");
+console.log(pablo.getInfo());
+
+// Empleado Rafa
+// Empleado Mario -> Directivo
+// Empleado Alfonso -> Operario
+// Empleado Luis -> Operario -> Oficial
+// Empleado Pablo -> Operario -> Tecnico   
